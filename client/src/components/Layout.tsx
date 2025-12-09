@@ -12,7 +12,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -102,11 +102,9 @@ export default function Layout({ children }: LayoutProps) {
       <div className="flex-1 lg:ml-64 flex flex-col min-h-screen transition-all duration-300 ease-in-out">
         <header className="h-16 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-20 px-4 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" onClick={() => setIsMobileOpen(true)}>
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
+            <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMobileOpen(true)}>
+              <Menu className="h-5 w-5" />
+            </Button>
             
             {/* Breadcrumbs / Page Title */}
             <div className="flex items-center text-sm text-muted-foreground">
